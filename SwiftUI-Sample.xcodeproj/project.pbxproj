@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D43E05B522B0773A00316560 /* SampleSwiftUIComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E05B422B0773A00316560 /* SampleSwiftUIComposeView.swift */; };
 		D43E05B722B0778300316560 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E05B622B0778300316560 /* CircleImage.swift */; };
+		D43E05B922B079F100316560 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D43E05B822B079F100316560 /* README.md */; };
 		D486521E22AE53DA00AA4DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486521D22AE53DA00AA4DFD /* AppDelegate.swift */; };
 		D486522022AE53DA00AA4DFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486521F22AE53DA00AA4DFD /* SceneDelegate.swift */; };
 		D486522322AE53DA00AA4DFD /* SwiftUI_Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D486522122AE53DA00AA4DFD /* SwiftUI_Sample.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		D43E05B422B0773A00316560 /* SampleSwiftUIComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSwiftUIComposeView.swift; sourceTree = "<group>"; };
 		D43E05B622B0778300316560 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		D43E05B822B079F100316560 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D486521A22AE53DA00AA4DFD /* SwiftUI-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D486521D22AE53DA00AA4DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D486521F22AE53DA00AA4DFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		D486521122AE53DA00AA4DFD = {
 			isa = PBXGroup;
 			children = (
+				D43E05B822B079F100316560 /* README.md */,
 				D486521C22AE53DA00AA4DFD /* SwiftUI-Sample */,
 				D486523622AE53DD00AA4DFD /* SwiftUI-SampleTests */,
 				D486524122AE53DD00AA4DFD /* SwiftUI-SampleUITests */,
@@ -262,6 +265,7 @@
 			files = (
 				D486522D22AE53DD00AA4DFD /* LaunchScreen.storyboard in Resources */,
 				D486522A22AE53DD00AA4DFD /* Preview Assets.xcassets in Resources */,
+				D43E05B922B079F100316560 /* README.md in Resources */,
 				D486522722AE53DD00AA4DFD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

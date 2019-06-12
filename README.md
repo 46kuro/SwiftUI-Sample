@@ -14,6 +14,8 @@ https://developer.apple.com/tutorials/swiftui/tutorials
 
 Tutorial is also found in XCode project(Navigation Bar > Help > Developer Documentation)
 
+* [Creating and Combining Views](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+
 # View
 ## UI Components
 ### Text
@@ -71,3 +73,5 @@ Swift5.0/5.1 features are used in SwiftUI.
 I think The following Swift5.0/5.1 features are important to understand SwiftUI.
 
 - TODO: important features to understand SwiftUI
+
+# Unit / UI Testing
