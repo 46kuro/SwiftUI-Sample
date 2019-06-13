@@ -11,7 +11,7 @@ import SwiftUI
 struct SampleSwiftUIComposeView : View {
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinate: landmarkData[0].locationCoordinate)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
             
