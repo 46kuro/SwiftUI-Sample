@@ -15,6 +15,7 @@
 		D4F32E2122BB8C04003C1F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F32E1F22BB8C04003C1F26 /* LaunchScreen.storyboard */; };
 		D4F32E2C22BB8C04003C1F26 /* SwiftUI_HTTPSessionSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F32E2B22BB8C04003C1F26 /* SwiftUI_HTTPSessionSampleTests.swift */; };
 		D4F32E3722BB8C04003C1F26 /* SwiftUI_HTTPSessionSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F32E3622BB8C04003C1F26 /* SwiftUI_HTTPSessionSampleUITests.swift */; };
+		D4F32E4522BB8CE4003C1F26 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F32E4422BB8CE4003C1F26 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D4F32E3222BB8C04003C1F26 /* SwiftUI-HTTPSessionSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-HTTPSessionSampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F32E3622BB8C04003C1F26 /* SwiftUI_HTTPSessionSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_HTTPSessionSampleUITests.swift; sourceTree = "<group>"; };
 		D4F32E3822BB8C04003C1F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F32E4422BB8CE4003C1F26 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D4F32E1F22BB8C04003C1F26 /* LaunchScreen.storyboard */,
 				D4F32E2222BB8C04003C1F26 /* Info.plist */,
 				D4F32E1C22BB8C04003C1F26 /* Preview Content */,
+				D4F32E4422BB8CE4003C1F26 /* User.swift */,
 			);
 			path = "SwiftUI-HTTPSessionSample";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F32E4522BB8CE4003C1F26 /* User.swift in Sources */,
 				D4F32E1522BB8C03003C1F26 /* AppDelegate.swift in Sources */,
 				D4F32E1722BB8C03003C1F26 /* SceneDelegate.swift in Sources */,
 				D4F32E1922BB8C03003C1F26 /* ContentView.swift in Sources */,

@@ -6,11 +6,20 @@
 //  Copyright © 2019 Shinji Kurosawa. All rights reserved.
 //
 
+import UIKit
 import SwiftUI
 
 struct ContentView : View {
+    @EnvironmentObject var user: User?
+    
     var body: some View {
-        Text("Hello World")
+        
+        ZStack {
+            // TODO: ActivityIndicatorを動かすViewControllerを作成
+//            UIActivityIndicatorView()
+            
+            Text("Hello World")
+        }
     }
 }
 

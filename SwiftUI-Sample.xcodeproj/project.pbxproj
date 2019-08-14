@@ -38,6 +38,7 @@
 		D486523822AE53DD00AA4DFD /* SwiftUI_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486523722AE53DD00AA4DFD /* SwiftUI_SampleTests.swift */; };
 		D486524322AE53DD00AA4DFD /* SwiftUI_SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486524222AE53DD00AA4DFD /* SwiftUI_SampleUITests.swift */; };
 		D486525622AE873900AA4DFD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486525522AE873900AA4DFD /* MapView.swift */; };
+		D4BD9E38230406BB00795582 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD9E37230406BB00795582 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		D486524222AE53DD00AA4DFD /* SwiftUI_SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SampleUITests.swift; sourceTree = "<group>"; };
 		D486524422AE53DD00AA4DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D486525522AE873900AA4DFD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D4BD9E37230406BB00795582 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		D486521C22AE53DA00AA4DFD /* SwiftUI-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				D4BD9E36230406B000795582 /* Timer */,
 				D486525422AE872900AA4DFD /* Tutorial */,
 				D486521D22AE53DA00AA4DFD /* AppDelegate.swift */,
 				D486521F22AE53DA00AA4DFD /* SceneDelegate.swift */,
@@ -243,6 +246,14 @@
 				D43E05BA22B07B4A00316560 /* CreatingAndCombiningViews */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		D4BD9E36230406B000795582 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				D4BD9E37230406BB00795582 /* TimerView.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +406,7 @@
 				D486525622AE873900AA4DFD /* MapView.swift in Sources */,
 				D43E05B722B0778300316560 /* CircleImage.swift in Sources */,
 				D486522522AE53DA00AA4DFD /* ContentView.swift in Sources */,
+				D4BD9E38230406BB00795582 /* TimerView.swift in Sources */,
 				D486522022AE53DA00AA4DFD /* SceneDelegate.swift in Sources */,
 				D43E05C122B125B300316560 /* Data.swift in Sources */,
 				D464F08A22B284E10014779C /* LandmarkList.swift in Sources */,
