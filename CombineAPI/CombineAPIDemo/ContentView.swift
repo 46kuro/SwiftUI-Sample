@@ -6,11 +6,24 @@
 //  Copyright © 2019 Shinji Kurosawa. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel = ContentViewModel()
+     
     var body: some View {
-        Text("Hello World")
+        switch viewModel.loadingStatus {
+        case .loading:
+            return AnyView(Text("Loading!!").onAppear { 
+                self.viewModel.loadingViewOnApper()
+            })
+        case .success(let user):
+            return AnyView(Text("Hello World"))
+        case .failure:
+            return AnyView(Text("failure!!"))
+        }
     }
 }
 

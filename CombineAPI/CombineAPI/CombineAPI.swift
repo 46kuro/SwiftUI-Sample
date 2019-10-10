@@ -19,6 +19,10 @@ public class CombineAPI: APIProtocol {
     
     var cancellable: [AnyCancellable] = []
     
+    public init() {
+        
+    }
+    
     public func request<T: Codable>(from url: URL, resultHandler: @escaping (Result<T, Error>) -> Void) {
         URLSession.shared.dataTaskPublisher(for: url) 
             .map { $0.data }

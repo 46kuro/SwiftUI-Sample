@@ -18,6 +18,10 @@
 		D4AA8F55234CAF7D00C0F6DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AA8F54234CAF7D00C0F6DE /* Preview Assets.xcassets */; };
 		D4AA8F58234CAF7D00C0F6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4AA8F56234CAF7D00C0F6DE /* LaunchScreen.storyboard */; };
 		D4AA8F63234CAF7E00C0F6DE /* CombineAPIDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA8F62234CAF7E00C0F6DE /* CombineAPIDemoTests.swift */; };
+		D4AA8F6C234E1F8000C0F6DE /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA8F6B234E1F8000C0F6DE /* ContentViewModel.swift */; };
+		D4AA8F6E234E1FEC00C0F6DE /* CombineAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4483C97232D1CAF001C3066 /* CombineAPI.framework */; };
+		D4AA8F6F234E1FEC00C0F6DE /* CombineAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4483C97232D1CAF001C3066 /* CombineAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4AA8F74234E211A00C0F6DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA8F73234E211A00C0F6DE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,28 @@
 			remoteGlobalIDString = D4AA8F48234CAF7C00C0F6DE;
 			remoteInfo = CombineAPIDemo;
 		};
+		D4AA8F70234E1FEC00C0F6DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4483C8E232D1CAF001C3066 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4483C96232D1CAF001C3066;
+			remoteInfo = CombineAPI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4AA8F72234E1FED00C0F6DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D4AA8F6F234E1FEC00C0F6DE /* CombineAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D4483C97232D1CAF001C3066 /* CombineAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +81,8 @@
 		D4AA8F5E234CAF7E00C0F6DE /* CombineAPIDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineAPIDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AA8F62234CAF7E00C0F6DE /* CombineAPIDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAPIDemoTests.swift; sourceTree = "<group>"; };
 		D4AA8F64234CAF7E00C0F6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4AA8F6B234E1F8000C0F6DE /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		D4AA8F73234E211A00C0F6DE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4AA8F6E234E1FEC00C0F6DE /* CombineAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +127,7 @@
 				D4AA8F4A234CAF7C00C0F6DE /* CombineAPIDemo */,
 				D4AA8F61234CAF7E00C0F6DE /* CombineAPIDemoTests */,
 				D4483C98232D1CAF001C3066 /* Products */,
+				D4AA8F6D234E1FEC00C0F6DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,10 +167,12 @@
 				D4AA8F4B234CAF7C00C0F6DE /* AppDelegate.swift */,
 				D4AA8F4D234CAF7C00C0F6DE /* SceneDelegate.swift */,
 				D4AA8F4F234CAF7C00C0F6DE /* ContentView.swift */,
+				D4AA8F6B234E1F8000C0F6DE /* ContentViewModel.swift */,
 				D4AA8F51234CAF7D00C0F6DE /* Assets.xcassets */,
 				D4AA8F56234CAF7D00C0F6DE /* LaunchScreen.storyboard */,
 				D4AA8F59234CAF7D00C0F6DE /* Info.plist */,
 				D4AA8F53234CAF7D00C0F6DE /* Preview Content */,
+				D4AA8F73234E211A00C0F6DE /* User.swift */,
 			);
 			path = CombineAPIDemo;
 			sourceTree = "<group>";
@@ -161,6 +192,13 @@
 				D4AA8F64234CAF7E00C0F6DE /* Info.plist */,
 			);
 			path = CombineAPIDemoTests;
+			sourceTree = "<group>";
+		};
+		D4AA8F6D234E1FEC00C0F6DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,10 +258,12 @@
 				D4AA8F45234CAF7C00C0F6DE /* Sources */,
 				D4AA8F46234CAF7C00C0F6DE /* Frameworks */,
 				D4AA8F47234CAF7C00C0F6DE /* Resources */,
+				D4AA8F72234E1FED00C0F6DE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D4AA8F71234E1FEC00C0F6DE /* PBXTargetDependency */,
 			);
 			name = CombineAPIDemo;
 			productName = CombineAPIDemo;
@@ -350,8 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4AA8F6C234E1F8000C0F6DE /* ContentViewModel.swift in Sources */,
 				D4AA8F4C234CAF7C00C0F6DE /* AppDelegate.swift in Sources */,
 				D4AA8F4E234CAF7C00C0F6DE /* SceneDelegate.swift in Sources */,
+				D4AA8F74234E211A00C0F6DE /* User.swift in Sources */,
 				D4AA8F50234CAF7C00C0F6DE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +418,11 @@
 			isa = PBXTargetDependency;
 			target = D4AA8F48234CAF7C00C0F6DE /* CombineAPIDemo */;
 			targetProxy = D4AA8F5F234CAF7E00C0F6DE /* PBXContainerItemProxy */;
+		};
+		D4AA8F71234E1FEC00C0F6DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4483C96232D1CAF001C3066 /* CombineAPI */;
+			targetProxy = D4AA8F70234E1FEC00C0F6DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
