@@ -23,13 +23,19 @@ final class ContentViewModel: ObservableObject {
     @Published var loadingStatus: LoadingStatus = .loading
     
     func loadingViewOnApper() {
-        request()
+        let publisher = URLSession.shared.dataTaskPublisher(for: URL(string: "https://api.github.com/search/users?q=46kuro")!)
+        request(publisher: publisher)
     }
     
-    private func request() {
+    private func request<T: Publisher>(publisher: T) {
         loadingStatus = .loading
-        URLSession.shared.dataTaskPublisher(for: URL(string: "https://api.github.com/search/users?q=46kuro")!)
-            .map { $0.data }
+        publisher
+            .map {
+                // TODO: PublisherのOutputの型をDataで縛る実装方針を考える
+                // URLSession.DataTaskPublisherを使用して、Mockを差し込みたい
+                let output = $0 as! (data: Data, response: URLResponse)
+                return output.data    
+            }
             .decode(type: User.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -41,4 +47,8 @@ final class ContentViewModel: ObservableObject {
             })
             .store(in: &cancellable)
     }
+}
+
+extension Publisher {
+    typealias Output = (data: Data, response: URLResponse)
 }
