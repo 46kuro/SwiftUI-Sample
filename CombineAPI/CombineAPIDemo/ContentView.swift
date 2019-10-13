@@ -19,12 +19,12 @@ struct ContentView: View {
             case .loading:
                 return AnyView(Text("Loading!!"))
             case .success(let user):
-                return AnyView(Text("Hello World"))
+                return AnyView(Text("user count is \(user.totalCount ?? 0)"))
             case .failure:
                 return AnyView(Text("failure!!"))
             }
         }.onAppear { 
-            self.viewModel.onApper()
+            self.viewModel.onAppear()
         }
     }
 }

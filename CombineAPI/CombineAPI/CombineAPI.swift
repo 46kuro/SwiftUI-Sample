@@ -14,7 +14,7 @@ public protocol SessionManager {
 }
 
 // 参考: https://heckj.github.io/swiftui-notes/
-public protocol APIProtocol: class {
+public protocol APIProtocol {
     func publish<T: Request>(request: T) -> AnyPublisher<T.Response, Error>
 }
 

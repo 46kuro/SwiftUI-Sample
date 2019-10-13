@@ -15,27 +15,30 @@ final class ContentViewModel: ObservableObject {
     enum LoadingStatus {
         case loading
         case success(User)
-        case failure
+        case failure(Error)
     }
     
+    private let api: APIProtocol 
     var cancellable: [AnyCancellable] = []
     
     @Published var loadingStatus: LoadingStatus = .loading
     
-    func onApper() {
-        request()
+    init(api: APIProtocol = API()) {
+        self.api = api
     }
     
-    // TODO: APIProtocolでAnyPublisherを使用することで、failureおよびsuccessを確認する
-    func request(api: APIProtocol = API()) {
+    func onAppear() {
+        requestUserCount()
+    }
+    
+    private func requestUserCount() {
         loadingStatus = .loading
         
         api.publish(request: GithubUserRequest())
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
-                print("failure!!!")
+                self.loadingStatus = .failure(error)
             }, receiveValue: { user in
-                print("\(user.totalCount)")
                 self.loadingStatus = .success(user)
             })
             .store(in: &cancellable)
