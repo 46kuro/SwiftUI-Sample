@@ -9,11 +9,11 @@
 import Combine
 import Foundation
 
-public protocol SessionManager {
-    
-}
+// References:
+// - https://heckj.github.io/swiftui-notes/
+// - https://qiita.com/H_Crane/items/4778d7951cd0e1611f5b
+// - https://medium.com/better-programming/swift-unit-test-a-datataskpublisher-with-urlprotocol-2fbda186758e 
 
-// 参考: https://heckj.github.io/swiftui-notes/
 public protocol APIProtocol {
     func publish<T: Request>(request: T) -> AnyPublisher<T.Response, Error>
 }
@@ -26,17 +26,19 @@ public class API: APIProtocol {
         case post
     }
     
+    let session: URLSession
     var cancellable: [AnyCancellable] = []
     
-    /// TODO: Mock化しよう
-    public init() { }
+    public init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
     
     public func publish<T>(request: T) -> AnyPublisher<T.Response, Error> where T : Request {
         // TODO: Alamofire辺りを使用してAPIClientを作る
         // TODO: URLSessionをStub化することで、正常系と異常系のテストができるようにする（CombineAPIDemoの90行目参照）
         let request = URLRequest(url: request.url)
         
-        return URLSession.shared.dataTaskPublisher(for: request)
+        return session.dataTaskPublisher(for: request)
             .validate(statusCode: 200..<300)
             .map { $0.data }
             .decode(type: T.Response.self, decoder: JSONDecoder())
@@ -45,7 +47,7 @@ public class API: APIProtocol {
     }
 }
 
-// 参考：https://qiita.com/H_Crane/items/4778d7951cd0e1611f5b
+// Reference: - https://qiita.com/H_Crane/items/4778d7951cd0e1611f5b
 extension URLSession.DataTaskPublisher {
 
     func validate<S: Sequence>(statusCode range: S) -> Self where S.Iterator.Element == Int {
