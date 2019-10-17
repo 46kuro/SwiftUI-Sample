@@ -28,12 +28,35 @@ class CombineAPITests: XCTestCase {
         MockURLProtocol.testURLs = [URL?: Data]()
     }
     
-    func testResponse() {
+    func testValidResponse() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         
         MockURLProtocol.testURLs = [URL(string: "http://localhost:8080")!: Data(mocks.testResponse.utf8)]
-        MockURLProtocol.response = mocks.invalidResponse401
+        MockURLProtocol.response = mocks.validResponse
+        
+        let expectationCompletion = expectation(description: "completion")
+        let expectationSuccess = expectation(description: "success")
+        let api = API(session: URLSession(configuration: config))
+        api.publish(request: TestRequest()).sink(receiveCompletion: { completion in
+            guard case .finished = completion else {
+                XCTFail("should be finished")
+                return
+            }
+            expectationCompletion.fulfill()
+        }) { response in
+            XCTAssertEqual(response.value, 1, "response is received")
+            expectationSuccess.fulfill()
+        }.store(in: &cancellable)
+        wait(for: [expectationCompletion, expectationSuccess], timeout: 1)
+    }
+    
+    func testInvalidDataResponse() {
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockURLProtocol.self]
+        
+        MockURLProtocol.testURLs = [URL(string: "http://localhost:8080")!: Data("{{}".utf8)]
+        MockURLProtocol.response = mocks.validResponse
         
         let expectationFailure = expectation(description: "failure")
         let api = API(session: URLSession(configuration: config))
@@ -42,13 +65,36 @@ class CombineAPITests: XCTestCase {
                 XCTFail("should be error")
                 return
             }
-            XCTAssertEqual(error.localizedDescription, "Hoge")
+            XCTAssertEqual(error.localizedDescription, "The data couldn’t be read because it isn’t in the correct format.", "error message test")
             expectationFailure.fulfill()
         }) { response in
-            XCTFail("should not receive response")
+            XCTFail("should be error")
         }.store(in: &cancellable)
         wait(for: [expectationFailure], timeout: 1)
     }
+    
+    // TODO: ValidateメソッドのTest
+//    func testInvalidStatuCodeResponse() {
+//        let config = URLSessionConfiguration.ephemeral
+//        config.protocolClasses = [MockURLProtocol.self]
+//        
+//        MockURLProtocol.testURLs = [URL(string: "http://localhost:8080")!: Data(mocks.testResponse.utf8)]
+//        MockURLProtocol.response = mocks.invalidResponse300
+//        
+//        let expectationFailure = expectation(description: "failure")
+//        let api = API(session: URLSession(configuration: config))
+//        api.publish(request: TestRequest()).sink(receiveCompletion: { completion in
+//            guard case .failure(let error) = completion else {
+//                XCTFail("should be error")
+//                return
+//            }
+//            XCTAssertEqual(error.localizedDescription, "Hoge")
+//            expectationFailure.fulfill()
+//        }) { response in
+//            XCTFail("should be error")
+//        }.store(in: &cancellable)
+//        wait(for: [expectationFailure], timeout: 1)
+//    }
 }
 
 class TestRequest: Request {

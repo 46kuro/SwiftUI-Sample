@@ -35,7 +35,6 @@ public class API: APIProtocol {
     
     public func publish<T>(request: T) -> AnyPublisher<T.Response, Error> where T : Request {
         // TODO: Alamofire辺りを使用してAPIClientを作る
-        // TODO: URLSessionをStub化することで、正常系と異常系のテストができるようにする（CombineAPIDemoの90行目参照）
         let request = URLRequest(url: request.url)
         
         return session.dataTaskPublisher(for: request)
