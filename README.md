@@ -75,3 +75,9 @@ I think The following Swift5.0/5.1 features are important to understand SwiftUI.
 - TODO: important features to understand SwiftUI
 
 # Unit / UI Testing
+
+## Custom UI
+
+
+### Parallax Scrolling
+* https://medium.com/swlh/swiftui-create-a-stretchable-header-with-parallax-scrolling-4a98faeeb262
